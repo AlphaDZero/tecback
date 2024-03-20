@@ -4,17 +4,16 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
-public class Filme {
+public class Genero {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String titulo;
-    private String descricao;
+    private String nome;
 
-    @ManyToOne
-    @JoinColumn(name = "genero_id", nullable = false)
-    private Genero genero;
+
 }
