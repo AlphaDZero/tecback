@@ -11,4 +11,8 @@ public interface ViaCepClient {
     @GetMapping("/{cep}/json")
     public Endereco consultaEndereco(@PathVariable String cep);
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> bda92f38645ab01a1a1988a85a603e367369c500

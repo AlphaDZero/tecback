@@ -15,4 +15,8 @@ public class Endereco {
     private String gia;
     private String ddd;
     private String siafi;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> bda92f38645ab01a1a1988a85a603e367369c500
