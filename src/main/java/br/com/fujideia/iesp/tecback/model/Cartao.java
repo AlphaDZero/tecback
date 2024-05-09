@@ -4,6 +4,9 @@ import lombok.Data;
 
 @Data
 public class Cartao {
-    private String numero;
+    private String numeroCartao;
     private String codigoSeguranca;
+    private String validadeCartao;
+    private String nomeTitular;
+    private String cpf;
 }
