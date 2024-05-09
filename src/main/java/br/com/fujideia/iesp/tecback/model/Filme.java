@@ -13,6 +13,11 @@ public class Filme {
     private Integer id;
     private String titulo;
     private String descricao;
+    private String ano;
+    private String duracao;
+    private String relevancia;
+    private String sinopse;
+    private String trailer;
 
     @ManyToOne
     @JoinColumn(name = "genero_id", nullable = false)
