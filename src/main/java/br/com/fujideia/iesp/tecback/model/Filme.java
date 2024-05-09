@@ -13,7 +13,6 @@ public class Filme {
     private Integer id;
     private String titulo;
     private String descricao;
-<<<<<<< HEAD
     private String ano;
     private String duracao;
     private String relevancia;
@@ -23,11 +22,6 @@ public class Filme {
     @ManyToOne
     @JoinColumn(name = "genero_id", nullable = false)
     private Genero genero;
-=======
     @Transient
     private Integer anoLancamento;
-
-
-
->>>>>>> bda92f38645ab01a1a1988a85a603e367369c500
 }
