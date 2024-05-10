@@ -25,7 +25,7 @@ public class GeneroService {
 
     public Genero atualizar(Genero genero){
         if(genero.getId()==null){
-            throw new RuntimeException("Filme sem ID");
+            throw new RuntimeException("Genero sem ID");
         }
         return repository.save(genero);
     }

@@ -24,7 +24,7 @@ public class UsuarioService {
 
     public Usuario atualizar(Usuario usuario){
         if(usuario.getId()==null){
-            throw new RuntimeException("Filme sem ID");
+            throw new RuntimeException("Usuario sem ID");
         }
         return repository.save(usuario);
     }
