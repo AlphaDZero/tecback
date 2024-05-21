@@ -4,6 +4,7 @@ import br.com.fujideia.iesp.tecback.model.Filme;
 import br.com.fujideia.iesp.tecback.model.Usuario;
 import br.com.fujideia.iesp.tecback.service.FilmeService;
 import br.com.fujideia.iesp.tecback.service.UsuarioService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +17,7 @@ public class UsuarioController {
     private UsuarioService service;
 
     @PostMapping
-    public Usuario salvar(@RequestBody Usuario usuario){
+    public Usuario salvar(@Valid @RequestBody Usuario usuario){
         return service.salvar(usuario);
     }
 
