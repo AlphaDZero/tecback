@@ -1,6 +1,8 @@
 package br.com.fujideia.iesp.tecback.controller;
 
 import br.com.fujideia.iesp.tecback.model.Filme;
+import br.com.fujideia.iesp.tecback.model.Serie;
+import br.com.fujideia.iesp.tecback.repository.FilmeRepository;
 import br.com.fujideia.iesp.tecback.service.FilmeService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +15,7 @@ import java.util.List;
 public class FilmeController {
 
     private FilmeService service;
+    private FilmeRepository repository;
 
     @PostMapping
     public Filme salvar(@RequestBody Filme filme){
@@ -27,6 +30,11 @@ public class FilmeController {
     @GetMapping
     public List<Filme> listarTodos(){
         return service.listarTodos();
+    }
+
+    @GetMapping("/{genero}")
+    public List<Filme> listarPorGenero(@RequestParam(required = false) String genero){
+        return repository.findByGenero(genero);
     }
 
     @GetMapping("/{id}")

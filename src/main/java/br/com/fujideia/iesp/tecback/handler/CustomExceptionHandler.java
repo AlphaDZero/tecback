@@ -14,7 +14,7 @@ public class CustomExceptionHandler {
         ErrorDTO errorDTO = ErrorDTO
                 .builder()
                 .key("NULL POINTER")
-                .messager("Error de valor nulo" + ne.getMessage())
+                .message("Error de valor nulo" + ne.getMessage())
                 .build();
         return ResponseEntity.ok(errorDTO);
     }
