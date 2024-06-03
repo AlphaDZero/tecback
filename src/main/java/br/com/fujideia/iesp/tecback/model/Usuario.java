@@ -1,6 +1,7 @@
 package br.com.fujideia.iesp.tecback.model;
 
 import br.com.fujideia.iesp.tecback.validator.IdadeRange;
+import br.com.fujideia.iesp.tecback.validator.SenhaRange;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,8 +18,9 @@ public class Usuario {
     private Integer id;
     private String nomeCompleto;
     private String dataNascimento;
-    @IdadeRange(min = 7, max = 100)
+    @IdadeRange(min = 12, max = 100)
     private Integer idade;
     private String email;
+    @SenhaRange(min = 8, max = 50)
     private String senha;
 }
