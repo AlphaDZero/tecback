@@ -1,5 +1,6 @@
 package br.com.fujideia.iesp.tecback.controller;
 
+import br.com.fujideia.iesp.tecback.model.Filme;
 import br.com.fujideia.iesp.tecback.model.Serie;
 import br.com.fujideia.iesp.tecback.repository.SerieRepository;
 import br.com.fujideia.iesp.tecback.service.SerieService;
@@ -26,14 +27,19 @@ public class SerieController {
     }
 
     @GetMapping
-    public List<Serie> listarTodos(){
+    public List<Serie> listar(String condicao){
+        if(condicao.equals("todos")) {
+            return service.listarTodos();
+        }
+        else if (condicao.equals("por titulo")) {
+            return repository.findByTituloAsc();
+        }
+        else if (condicao.equals("por genero")) {
+            return repository.findByGeneroAsc();
+        }
         return service.listarTodos();
     }
 
-    @GetMapping("/{genero}")
-    public List<Serie> listarPorGenero(@RequestParam(required = false) String genero){
-        return repository.findByGenero(genero);
-    }
 
     @GetMapping("/{id}")
     public Serie buscarPorId(@PathVariable Integer id){
